@@ -1,0 +1,10 @@
+/.github
+/coverage
+/scripts
+/test
+.markdownlintrc
+.travis.yml
+.idea
+/src
+codecov.yml
+desktop.ini
