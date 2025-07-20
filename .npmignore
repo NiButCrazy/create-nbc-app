@@ -6,5 +6,6 @@
 .travis.yml
 .idea
 /src
+/public/snap
 codecov.yml
 desktop.ini

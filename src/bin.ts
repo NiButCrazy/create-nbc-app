@@ -193,10 +193,23 @@ function handleAnswers(argv: string[], name: string, template: string, extra: st
             })
           }
         }
+        // 写入 package.json 文件项目名
+        const pkg = JSON.parse(
+          fs.readFileSync(path.join(destPath, `package.json`), 'utf-8'),
+        )
 
-        spinner.stop()
-        console.log(color.green('✓' + ' 模板下载成功'))
-        console.log(color.dim('  ➥ 模板目录: ' + destPath))
+        pkg.name = name
+
+        fs.writeFile(path.join(destPath, `package.json`), JSON.stringify(pkg, null, 2) + '\n', (error) => {
+          spinner.stop()
+          if (error) {
+            console.error(color.red('    ➥ 未知错误: ' + error.message))
+          } else {
+            console.log(color.green('✓' + ' 模板下载成功'))
+            console.log(color.dim('  ➥ 模板目录: ' + destPath))
+          }
+        })
+
       }
     }
   )
