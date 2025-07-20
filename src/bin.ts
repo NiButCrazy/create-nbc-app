@@ -77,7 +77,14 @@ export async function run(argv: string[]) {
       {
         name: 'node',
         value: 'node',
-        disabled: '(开发中...)',
+        description: selectDescription({
+          build: 'tsdown',
+          framework: 'node',
+          css: 'vitest',
+          dependencies: [ 'ora', 'picocolors' ],
+          introduce: '为库开发者提供了完整的开箱即用解决方案、无缝且高效的打包方式\n' +
+            '  无需复杂配置，自动生成 .d.ts 声明文件、支持多种输出格式等功能'
+        }),
       },
       {
         name: 'other',
@@ -121,7 +128,7 @@ export async function run(argv: string[]) {
   }) : []
 
   // 处理选项
-  handleAnswers(argv, answer_projectName, answer_template, answer_extra, isOther)
+  handleAnswers(answer_projectName, answer_template, answer_extra, isOther)
 }
 
 // 模板仓库
@@ -129,10 +136,11 @@ const templateRepos: Record<string, string> = {
   tampermonkey: 'NiButCrazy/Vite-Tampermonkey-Template',
   react: 'NiButCrazy/Vite-React-Template',
   electron: 'NiButCrazy/Vite-Electron-React-Template',
+  node: 'NiButCrazy/tsdown-node-template',
 }
 
 // 处理回答
-function handleAnswers(argv: string[], name: string, template: string, extra: string[], isOther: boolean) {
+function handleAnswers(name: string, template: string, extra: string[], isOther: boolean) {
   // 加载动画
   const spinner = ora({
     spinner: {
@@ -159,6 +167,7 @@ function handleAnswers(argv: string[], name: string, template: string, extra: st
           console.log(color.red('  ➥ 无法解析地址: ' + template))
         } else if (error.message.includes('could not fetch remote')) {
           console.log(color.red('  ➥ 无法获取仓库: ' + template + '\n    ➥ 请检查拼写或网络代理'))
+          console.log(repo)
         } else if (error.message.includes('could not find commit hash for')) {
           console.log(color.red('  ➥ 未找到指定 commit: ' + template))
         } else {

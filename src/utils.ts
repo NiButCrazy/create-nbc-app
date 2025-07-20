@@ -35,11 +35,12 @@ export function selectDescription(
   `)
     )
   }
+  const isNode = framework === 'node'
   let description = `
-  ${ color.blue('构建工具') }: ${ color.cyan(build) }
-  ${ color.blue('前端框架') }: ${ color.cyan(framework) }
-  ${ color.blue('编程语言') }: ${ color.cyan(lang) }
-  ${ color.blue('样式预处理') }: ${ color.cyan(css) }
+  ${ color.blue('构建工具') + ': ' + color.cyan(build) }
+  ${ !isNode ? (color.blue('前端框架') + ': ' + color.cyan(framework)) : (color.blue('运行环境') + ': ' + color.cyan(framework)) }
+  ${ color.blue('编程语言') + ': ' + color.cyan(lang) }
+  ${ !isNode ? (color.blue('样式预处理') + ': ' + color.cyan(css)) : (color.blue('测试框架') + ': ' + color.cyan(css)) }
   ${ dependencies.length ? (color.blue('工具依赖包') + ': ' + color.cyan(dependencies.join(color.white(' | ')))) : '' }
 
   ${ color.magentaBright(introduce) }

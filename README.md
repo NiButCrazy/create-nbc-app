@@ -13,12 +13,16 @@
 
 ```shell
 npm create nbc-app
+# yarn create nbc-app
+# pnpm create nbc-app
 ```
 
 支持`项目名称`作为参数
 
 ```shell
 npm create nbc-app <project-name>
+# yarn create nbc-app <project-name>
+# pnpm create nbc-app <project-name>
 ```
 
 ### 演示
