@@ -23,4 +23,4 @@ npm create nbc-app <project-name>
 
 ### 演示
 
-[演示动图](https://github.com/NiButCrazy/create-nbc-app/blob/master/public/snap/p1.gif)
+![演示动图](https://github.com/NiButCrazy/create-nbc-app/blob/master/public/snap/p1.gif)
