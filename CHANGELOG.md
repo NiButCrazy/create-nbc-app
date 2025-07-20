@@ -4,7 +4,19 @@
 
 
 
-## [v1.0.0](https://github.com/NiButCrazy/create-nbc-app/compare/v0.0.2...v1.0.0) -  v0.0.2..
+## [v1.0.1](https://github.com/NiButCrazy/create-nbc-app/compare/v1.0.0...v1.0.1) -  v1.0.0..
+
+#### :bug: 修复
+
+- package:  傻逼了，修正了入口文件 &nbsp;- by @[NiButCrazy](https://github.com/NiButCrazy) [`(5636d1f)`](https://github.com/NiButCrazy/create-nbc-app/commit/5636d1fb8890db24207589703285a051c5b5eb1f)
+
+#### :cyclone: 整体修改
+
+- Update README.md &nbsp;- by @[倪爸爸](https://github.com/倪爸爸) [`(918c677)`](https://github.com/NiButCrazy/create-nbc-app/commit/918c677da451e0df00483f5fa8433a3ed99059d4)
+
+
+
+# [v1.0.0](https://github.com/NiButCrazy/create-nbc-app/compare/v0.0.2...v1.0.0) -  2025/07/20 
 
 #### :sparkles: 新功能
 
