@@ -4,7 +4,21 @@
 
 
 
-## [v0.0.2](https://github.com/NiButCrazy/create-nbc-app/compare/v0.0.1...v0.0.2) -  v0.0.1..
+## [v1.0.0](https://github.com/NiButCrazy/create-nbc-app/compare/v0.0.2...v1.0.0) -  v0.0.2..
+
+#### :sparkles: 新功能
+
+-  增加了修改 package.json 版本号的功能 &nbsp;- by @[NiButCrazy](https://github.com/NiButCrazy) [`(b060759)`](https://github.com/NiButCrazy/create-nbc-app/commit/b060759855fc4b97536ba47020422baf486c824e)
+	-  docs(README.md): README.md 文件，包含项目介绍、使用方法和演示
+
+#### :book: 文档
+
+-  增加了修改 package.json 版本号的功能 &nbsp;- by @[NiButCrazy](https://github.com/NiButCrazy) [`(b060759)`](https://github.com/NiButCrazy/create-nbc-app/commit/b060759855fc4b97536ba47020422baf486c824e)
+	-  docs(README.md): README.md 文件，包含项目介绍、使用方法和演示
+
+
+
+## [v0.0.2](https://github.com/NiButCrazy/create-nbc-app/compare/v0.0.1...v0.0.2) -  2025/07/20 
 
 #### :bug: 修复
 
