@@ -4,7 +4,15 @@
 
 
 
-## [v1.0.2](https://github.com/NiButCrazy/create-nbc-app/compare/v1.0.1...v1.0.2) -  v1.0.1..
+## [v1.1.0](https://github.com/NiButCrazy/create-nbc-app/compare/v1.0.2...v1.1.0) -  v1.0.2..
+
+#### :sparkles: 新功能
+
+- src:  添加了node 模板的支持 &nbsp;- by @[NiButCrazy](https://github.com/NiButCrazy) [`(82a1d42)`](https://github.com/NiButCrazy/create-nbc-app/commit/82a1d42ffb068b844ef599d121effb2e3346cd2d)
+
+
+
+## [v1.0.2](https://github.com/NiButCrazy/create-nbc-app/compare/v1.0.1...v1.0.2) -  2025/07/20 
 
 #### :bug: 修复
 
