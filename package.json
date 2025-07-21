@@ -1,6 +1,6 @@
 {
   "name": "create-nbc-app",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "用于创建 NiButCrazy 仓库里的个人应用模板",
   "main": "./dist/index.js",
   "author": "Ni But Crazy",

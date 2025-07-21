@@ -4,7 +4,15 @@
 
 
 
-## [v1.1.0](https://github.com/NiButCrazy/create-nbc-app/compare/v1.0.2...v1.1.0) -  v1.0.2..
+## [v1.1.1](https://github.com/NiButCrazy/create-nbc-app/compare/v1.1.0...v1.1.1) -  v1.1.0..
+
+#### :books: 样式
+
+-  优化提示 &nbsp;- by @[NiButCrazy](https://github.com/NiButCrazy) [`(ef06b92)`](https://github.com/NiButCrazy/create-nbc-app/commit/ef06b92308af3bb4042e599c4f43ba84787d56e5)
+
+
+
+## [v1.1.0](https://github.com/NiButCrazy/create-nbc-app/compare/v1.0.2...v1.1.0) -  2025/07/20 
 
 #### :sparkles: 新功能
 
