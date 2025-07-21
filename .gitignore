@@ -22,4 +22,4 @@ dist-ssr
 *.sln
 *.sw?
 desktop.ini
-vcs.xml
+.idea/vcs.xml

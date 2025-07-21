@@ -32,6 +32,7 @@ export function selectDescription(
   - user/repo#dev       # branch
   - user/repo#v1.2.3    # release tag
   - user/repo#a1b2c3d4  # commit hash
+  ${ color.dim('> 右键粘贴') }
   `)
     )
   }
