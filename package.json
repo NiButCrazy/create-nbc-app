@@ -17,10 +17,16 @@
   },
   "keywords": [
     "create",
-    "template"
+    "template",
+    "react",
+    "node",
+    "vite",
+    "electron",
+    "tampermonky",
+    "tiged"
   ],
   "scripts": {
-    "build": "tsdown --dts",
+    "build": "tsdown --minify",
     "dev": "tsdown --watch ./src",
     "run": "node dist/index.js",
     "version": "nbc-auto-changelog -p && git add CHANGELOG.md"
