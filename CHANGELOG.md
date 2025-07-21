@@ -4,7 +4,15 @@
 
 
 
-## [v1.1.1](https://github.com/NiButCrazy/create-nbc-app/compare/v1.1.0...v1.1.1) -  v1.1.0..
+## [v1.1.2](https://github.com/NiButCrazy/create-nbc-app/compare/v1.1.1...v1.1.2) -  v1.1.1..
+
+#### :wrench: 依赖 | 构建
+
+-  压缩了打包后的体积 &nbsp;- by @[NiButCrazy](https://github.com/NiButCrazy) [`(6d00870)`](https://github.com/NiButCrazy/create-nbc-app/commit/6d00870a22a19a1e4bcc544d0ec03c375cd67a98)
+
+
+
+## [v1.1.1](https://github.com/NiButCrazy/create-nbc-app/compare/v1.1.0...v1.1.1) -  2025/07/21 
 
 #### :books: 样式
 
