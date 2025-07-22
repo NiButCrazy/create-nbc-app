@@ -1,7 +1,7 @@
 {
   "name": "create-nbc-app",
   "version": "1.1.2",
-  "description": "用于创建 NiButCrazy 仓库里的个人应用模板",
+  "description": "用于下载 NiButCrazy 仓库里的个人应用模板，也支持下载第三方模板",
   "main": "./dist/index.js",
   "author": "Ni But Crazy",
   "type": "module",
@@ -16,6 +16,7 @@
     "url": "https://github.com/NiButCrazy/create-nbc-app/issues"
   },
   "keywords": [
+    "cli",
     "create",
     "template",
     "react",
@@ -27,7 +28,7 @@
   ],
   "scripts": {
     "build": "tsdown --minify",
-    "dev": "tsdown --watch ./src",
+    "dev": "tsdown --watch --sourcemap ./src",
     "run": "node dist/index.js",
     "version": "nbc-auto-changelog -p && git add CHANGELOG.md"
   },
@@ -37,11 +38,11 @@
   "devDependencies": {
     "@inquirer/prompts": "^7.6.0",
     "@types/node": "^24.0.15",
+    "nbc-auto-changelog": "^1.0.4",
     "ora": "^8.2.0",
     "picocolors": "^1.1.1",
     "tiged": "^2.12.7",
     "tsdown": "^0.12.9",
-    "typescript": "^5.8.3",
-    "nbc-auto-changelog": "^1.0.3"
+    "typescript": "^5.8.3"
   }
 }

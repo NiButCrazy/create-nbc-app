@@ -1,5 +1,5 @@
 import { checkbox, input, select, Separator } from '@inquirer/prompts'
-import { selectDescription } from './utils'
+import { parse, selectDescription } from './utils'
 import { selectTheme, inputTheme, checkBoxTheme, otherTheme } from './themes'
 import { exec } from 'child_process'
 import ora from 'ora'
@@ -127,8 +127,30 @@ export async function run(argv: string[]) {
     ],
   }) : []
 
+  // 是否使用 Git 而不是直接下载 .tar.gz
+  const answer_git = await select({
+    message: '是否使用 git 克隆模式',
+    theme: selectTheme,
+    choices: [
+      {
+        name: '否',
+        value: false,
+        description: `
+  ${ color.green('支持缓存、下载速度快') }
+  ${ color.dim(('不支持私有仓库、不支持换行符自动转换')) }`,
+      },
+      {
+        name: '是',
+        value: true,
+        description: `
+  ${ color.green('支持私有仓库、支持换行符自动转换') }
+  ${ color.dim(('不支持缓存、下载速度慢')) }`,
+      },
+    ],
+  })
+
   // 处理选项
-  handleAnswers(answer_projectName, answer_template, answer_extra, isOther)
+  handleAnswers(answer_projectName, answer_template, answer_extra, isOther, answer_git)
 }
 
 // 模板仓库
@@ -140,7 +162,7 @@ const templateRepos: Record<string, string> = {
 }
 
 // 处理回答
-function handleAnswers(name: string, template: string, extra: string[], isOther: boolean) {
+function handleAnswers(name: string, template: string, extra: string[], isOther: boolean, answer_git: boolean) {
   // 加载动画
   const spinner = ora({
     spinner: {
@@ -152,14 +174,26 @@ function handleAnswers(name: string, template: string, extra: string[], isOther:
   spinner.start('下载中...')
 
   const repo = !isOther ? templateRepos[template] : template
+  let cmd = 'tiged' + ' ' + repo + ' ' + name
+  if (answer_git) {
+    const repoOptions = parse(repo)
+    if (repoOptions.subgroup) {
+      repoOptions.subgroup = true
+      repoOptions.name = repoOptions.subdir?.slice(1) ?? ''
+      repoOptions.url += repoOptions.subdir
+      repoOptions.ssh = `${ repoOptions.ssh + repoOptions.subdir }.git`
+    }
+    cmd = 'git clone --depth 1' + ' ' + repoOptions.url + '.git' + ' ' + name
+  }
 
   // 执行 tiged 下载命令
   exec(
-    'tiged' + ' ' + repo + ' ' + name,
+    cmd,
     (error) => {
       process.stdout.write('\x1b[1A') // 移动光标到上一行
       process.stdout.write('\x1b[K') // 清除当前行
       if (error) {
+
         spinner.fail('下载失败')
         if (error.message.includes('destination directory is not empty')) {
           console.log(color.red('  ➥ 存在同名目录: ' + name))
@@ -178,6 +212,15 @@ function handleAnswers(name: string, template: string, extra: string[], isOther:
 
         // 目标路径
         const destPath = path.join(process.cwd(), name)
+
+        // 删除 .git 目录
+        if (answer_git) {
+          fs.rm(path.join(destPath, '.git'), { recursive: true, force: true }, (error) => {
+            if (error) {
+              console.error(color.red('    ➥ 未知错误: ' + error.message))
+            }
+          })
+        }
 
         // 常规模板下载后
         if (!isOther) {
@@ -209,15 +252,16 @@ function handleAnswers(name: string, template: string, extra: string[], isOther:
 
         pkg.name = name
 
-        fs.writeFile(path.join(destPath, `package.json`), JSON.stringify(pkg, null, 2) + '\n', (error) => {
-          spinner.stop()
-          if (error) {
-            console.error(color.red('    ➥ 未知错误: ' + error.message))
-          } else {
-            console.log(color.green('✓' + ' 模板下载成功'))
-            console.log(color.dim('  ➥ 模板目录: ' + destPath))
-          }
-        })
+        fs.writeFile(path.join(destPath, `package.json`), JSON.stringify(pkg, null, 2) + '\n',
+          (error) => {
+            spinner.stop()
+            if (error) {
+              console.error(color.red('    ➥ 未知错误: ' + error.message))
+            } else {
+              console.log(color.green('✓' + ' 模板下载成功'))
+              console.log(color.dim('  ➥ 模板目录: ' + destPath))
+            }
+          })
 
       }
     }
