@@ -1,6 +1,6 @@
 {
   "name": "create-nbc-app",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "用于下载 NiButCrazy 仓库里的个人应用模板，也支持下载第三方模板",
   "main": "./dist/index.js",
   "author": "Ni But Crazy",
