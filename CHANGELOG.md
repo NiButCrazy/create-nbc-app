@@ -1,6 +1,12 @@
 ## 更新日志
 
-## [v1.2.0](https://github.com/NiButCrazy/create-nbc-app/compare/v1.1.2...v1.2.0) -  v1.1.2..
+## [v1.2.1](https://github.com/NiButCrazy/create-nbc-app/compare/v1.2.0...v1.2.1) -  v1.2.0..
+
+#### :package: 杂项
+
+-  修改了一点样式，添加了一点忽略文件 &nbsp;- by @[NiButCrazy](https://github.com/NiButCrazy) [`(e3f20af)`](https://github.com/NiButCrazy/create-nbc-app/commit/e3f20af63603a3066f1059eb52f5b4355c49b465)
+
+## [v1.2.0](https://github.com/NiButCrazy/create-nbc-app/compare/v1.1.2...v1.2.0) -  2025/07/22 
 
 #### :sparkles: 新功能
 
