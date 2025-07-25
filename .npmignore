@@ -9,3 +9,6 @@
 /public/snap
 codecov.yml
 desktop.ini
+tsdown.config.ts
+tsconfig.json
+vitest.config.ts
