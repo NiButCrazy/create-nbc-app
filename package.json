@@ -30,7 +30,7 @@
     "build": "tsdown --minify",
     "dev": "tsdown --sourcemap --watch ./src",
     "preview": "node dist/index.mjs",
-    "version": "nbc-auto-changelog -p && git add CHANGELOG.md"
+    "version": "git cliff && git add CHANGELOG.md"
   },
   "bin": {
     "create-nbc-app": "./dist/index.js"
