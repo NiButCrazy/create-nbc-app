@@ -22,6 +22,7 @@
     "react",
     "node",
     "vite",
+    "tauri",
     "electron",
     "tampermonky",
     "tiged"
