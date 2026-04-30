@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "esnext",
     "lib": ["ES2020"],
+    "types": ["node"],
     "moduleDetection": "force",
     "module": "ES2020",
     "moduleResolution": "bundler",

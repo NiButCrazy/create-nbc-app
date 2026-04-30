@@ -2,7 +2,7 @@
   "name": "create-nbc-app",
   "version": "1.2.1",
   "description": "用于下载 NiButCrazy 仓库里的个人应用模板，也支持下载第三方模板",
-  "main": "./dist/index.js",
+  "main": "./dist/index.mjs",
   "author": "Ni But Crazy",
   "type": "module",
   "license": "MIT",
@@ -28,8 +28,8 @@
   ],
   "scripts": {
     "build": "tsdown --minify",
-    "dev": "tsdown --watch --sourcemap ./src",
-    "run": "node dist/index.js",
+    "dev": "tsdown --sourcemap --watch ./src",
+    "preview": "node dist/index.mjs",
     "version": "nbc-auto-changelog -p && git add CHANGELOG.md"
   },
   "bin": {
@@ -42,7 +42,7 @@
     "ora": "^8.2.0",
     "picocolors": "^1.1.1",
     "tiged": "^2.12.7",
-    "tsdown": "^0.12.9",
+    "tsdown": "^0.21.10",
     "typescript": "^5.8.3"
   }
 }

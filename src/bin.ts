@@ -46,23 +46,36 @@ export async function run(argv: string[]) {
     message: '选择一个应用模板',
     instructions: { navigation: '↑↓', pager: '使用方向键进行选择' },
     theme: selectTheme,
+    pageSize: 8,
     choices: [
       new Separator(),
       {
         name: 'react',
         value: 'react',
         description: selectDescription({
-          dependencies: [ 'zustand', 'react router' ],
-          introduce: '组件化开发，由 React Router 路由管理、Zustand 全局状态管理'
+          css: ['less', 'unocss'],
+          dependencies: [ 'zustand', 'immer', 'clsx','react router', 'react compiler' ],
+          introduce: '组件化开发，由 React Router 路由管理、Zustand 全局状态管理、React Compiler 编译优化性能'
+        })
+      },
+      {
+        name: 'tauri',
+        value: 'tauri',
+        description: selectDescription({
+          css: ['less', 'unocss'],
+          dependencies: [ 'zustand', 'immer', 'clsx','react router', 'react compiler', 'cross-env' ],
+          introduce: '组件化开发，由 React Router 路由管理、Zustand 全局状态管理、React Compiler 编译优化性能\n' +
+          '  支持加载 React Devtools 独立版、Webview2 内置汉化版 React DevTools 开发者工具'
         })
       },
       {
         name: 'electron',
         value: 'electron',
         description: selectDescription({
-          dependencies: [ 'zustand', 'react router', 'electron', 'electron-builder', 'electron-devtools-installer' ],
-          introduce: '组件化开发，由 React Router 路由管理、Zustand 全局状态管理\n' +
-            '  支持一键打包、React DevTools 开发者工具、原生 DevTools 字体美化'
+          css: ['less', 'unocss'],
+          dependencies: [ 'zustand', 'immer', 'clsx','react router', 'react compiler', 'electron-builder' ],
+          introduce: '组件化开发，由 React Router 路由管理、Zustand 全局状态管理、React Compiler 编译优化性能\n' +
+            '  支持一键打包、汉化版 React DevTools 开发者工具、原生 DevTools 字体美化'
         }),
       },
       {
@@ -80,7 +93,7 @@ export async function run(argv: string[]) {
         description: selectDescription({
           build: 'tsdown',
           framework: 'node',
-          css: 'vitest',
+          css: ['vitest'],
           dependencies: [ 'ora', 'picocolors' ],
           introduce: '为库开发者提供了完整的开箱即用解决方案、无缝且高效的打包方式\n' +
             '  无需复杂配置，自动生成 .d.ts 声明文件、支持多种输出格式等功能'
@@ -159,6 +172,7 @@ const templateRepos: Record<string, string> = {
   react: 'NiButCrazy/Vite-React-Template',
   electron: 'NiButCrazy/Vite-Electron-React-Template',
   node: 'NiButCrazy/tsdown-node-template',
+  tauri: 'NiButCrazy/vite-tauri-template'
 }
 
 // 处理回答
@@ -262,7 +276,6 @@ function handleAnswers(name: string, template: string, extra: string[], isOther:
               console.log(color.dim('  ➥ 模板目录: ' + destPath))
             }
           })
-
       }
     }
   )
