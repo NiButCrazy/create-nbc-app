@@ -46,7 +46,7 @@ export async function run(argv: string[]) {
     message: '选择一个应用模板',
     instructions: { navigation: '↑↓', pager: '使用方向键进行选择' },
     theme: selectTheme,
-    pageSize: 8,
+    pageSize: 9,
     choices: [
       new Separator(),
       {
