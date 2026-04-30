@@ -7,14 +7,13 @@ on:
   
   workflow_dispatch:
 
+permissions:
+  id-token: write  # Required for OIDC
+  contents: write
 
 jobs:
   publish:
     runs-on: ubuntu-latest
-
-    permissions:
-      id-token: write  # OIDC 必需
-      contents: read
 
     steps:
       - name: Checkout
