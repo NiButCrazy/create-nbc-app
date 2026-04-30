@@ -10,7 +10,7 @@
   "homepage": "https://github.com/NiButCrazy/create-nbc-app",
   "repository": {
     "type": "git",
-    "url": "https://github.com/NiButCrazy/create-nbc-app.git"
+    "url": "git+https://github.com/NiButCrazy/create-nbc-app.git"
   },
   "bugs": {
     "url": "https://github.com/NiButCrazy/create-nbc-app/issues"

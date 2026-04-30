@@ -9,7 +9,7 @@ on:
 
 permissions:
   id-token: write  # Required for OIDC
-  contents: write
+  contents: read
 
 jobs:
   publish:
@@ -37,4 +37,4 @@ jobs:
         run: pnpm run build
       
       - name: Publish
-        run: npm publish
+        run: pnpm publish

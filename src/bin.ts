@@ -88,6 +88,16 @@ export async function run(argv: string[]) {
         }),
       },
       {
+        name: 'rspress',
+        value: 'rspress',
+        description: selectDescription({
+          build: 'rsbuild',
+          css: ['less'],
+          introduce: 'Rspress 是一个基于 Rsbuild 的静态站点生成器，你可以通过 Rspress 快速搭建文档站点，\n' +
+            '  该模板优化了主题样式、添加代码小图标功能、修复了主题切换问题'
+        }),
+      },
+      {
         name: 'node',
         value: 'node',
         description: selectDescription({
@@ -172,7 +182,8 @@ const templateRepos: Record<string, string> = {
   react: 'NiButCrazy/Vite-React-Template',
   electron: 'NiButCrazy/Vite-Electron-React-Template',
   node: 'NiButCrazy/tsdown-node-template',
-  tauri: 'NiButCrazy/vite-tauri-template'
+  tauri: 'NiButCrazy/vite-tauri-template',
+  rspress: 'NiButCrazy/rspress-template',
 }
 
 // 处理回答
