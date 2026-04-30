@@ -33,7 +33,7 @@
     "version": "git cliff && git add CHANGELOG.md"
   },
   "bin": {
-    "create-nbc-app": "./dist/index.js"
+    "create-nbc-app": "./dist/index.mjs"
   },
   "devDependencies": {
     "@inquirer/prompts": "^7.6.0",

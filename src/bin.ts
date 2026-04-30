@@ -236,6 +236,28 @@ function handleAnswers(name: string, template: string, extra: string[], isOther:
           })
         }
 
+        // 删除 pnpm-lock.yaml 文件
+        const lockFile = path.join(destPath, 'pnpm-lock.yaml')
+        if (fs.existsSync(lockFile)) {
+          fs.rm(lockFile, { recursive: true, force: true }, (error) => {
+            if (error) {
+              console.error(color.red('    ➥ 未知错误: ' + error.message))
+            }
+          })
+        }
+
+        if (template === 'tauri') {
+          // 删除 Cargo.lock 文件
+          const cargoLockFile = path.join(destPath, 'src-tauri/Cargo.lock')
+          if (fs.existsSync(cargoLockFile)) {
+            fs.rm(cargoLockFile, { recursive: true, force: true }, (error) => {
+              if (error) {
+                console.error(color.red('    ➥ 未知错误: ' + error.message))
+              }
+            })
+          }
+        }
+
         // 常规模板下载后
         if (!isOther) {
           // 创建 .editorconfig 文件
