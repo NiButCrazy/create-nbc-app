@@ -54,8 +54,8 @@ export async function run(argv: string[]) {
         value: 'react',
         description: selectDescription({
           css: ['less', 'unocss'],
-          dependencies: [ 'zustand', 'immer', 'clsx','react router', 'react compiler' ],
-          introduce: '组件化开发，由 React Router 路由管理、Zustand 全局状态管理、React Compiler 编译优化性能'
+          dependencies: [ 'zustand', 'immer', 'clsx','tanstack router', 'react compiler' ],
+          introduce: '组件化开发，由 Tanstack Router 路由管理、Zustand 全局状态管理、React Compiler 编译优化性能'
         })
       },
       {
@@ -63,8 +63,8 @@ export async function run(argv: string[]) {
         value: 'tauri',
         description: selectDescription({
           css: ['less', 'unocss'],
-          dependencies: [ 'zustand', 'immer', 'clsx','react router', 'react compiler', 'cross-env' ],
-          introduce: '组件化开发，由 React Router 路由管理、Zustand 全局状态管理、React Compiler 编译优化性能\n' +
+          dependencies: [ 'zustand', 'immer', 'clsx','tanstack router', 'react compiler', 'cross-env' ],
+          introduce: '组件化开发，由 Tanstack Router 路由管理、Zustand 全局状态管理、React Compiler 编译优化性能\n' +
           '  支持加载 React Devtools 独立版、Webview2 内置汉化版 React DevTools 开发者工具'
         })
       },
@@ -73,8 +73,8 @@ export async function run(argv: string[]) {
         value: 'electron',
         description: selectDescription({
           css: ['less', 'unocss'],
-          dependencies: [ 'zustand', 'immer', 'clsx','react router', 'react compiler', 'electron-builder' ],
-          introduce: '组件化开发，由 React Router 路由管理、Zustand 全局状态管理、React Compiler 编译优化性能\n' +
+          dependencies: [ 'zustand', 'immer', 'clsx','tanstack router', 'react compiler', 'electron-builder' ],
+          introduce: '组件化开发，由 Tanstack Router 路由管理、Zustand 全局状态管理、React Compiler 编译优化性能\n' +
             '  支持一键打包、汉化版 React DevTools 开发者工具、原生 DevTools 字体美化'
         }),
       },
